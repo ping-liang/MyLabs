@@ -1,0 +1,44 @@
+﻿@model mvcdemo.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Employee</legend>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.FirsName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.FirsName)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.LastName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LastName)
+        </div>
+    
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Birthday)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Birthday)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

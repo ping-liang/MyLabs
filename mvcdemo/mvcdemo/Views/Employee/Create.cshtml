@@ -1,0 +1,59 @@
+﻿@model mvcdemo.Models.Employee
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+</head>
+<body>
+    <script src="~/Scripts/jquery-1.7.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    
+    @using (Html.BeginForm()) {
+        @Html.ValidationSummary(true)
+    
+        <fieldset>
+            <legend>Employee</legend>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.FirsName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.FirsName)
+                @Html.ValidationMessageFor(model => model.FirsName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LastName)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LastName)
+                @Html.ValidationMessageFor(model => model.LastName)
+            </div>
+    
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Birthday)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Birthday)
+                @Html.ValidationMessageFor(model => model.Birthday)
+            </div>
+    
+            <p>
+                <input type="submit" value="Create" />
+            </p>
+        </fieldset>
+    }
+    
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>
